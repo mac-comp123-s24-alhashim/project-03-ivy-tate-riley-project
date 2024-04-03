@@ -3,10 +3,9 @@
 ## Connections
 Write information about your project here.
 
-## Title: 
-Connections
 ## Team Members: 
-Tate Mack (tmack1@macalester.edu) and Ivy Garrity (igarrity@macalester.edu)
+- Tate Mack (tmack1@macalester.edu)
+- Ivy Garrity (igarrity@macalester.edu)
 ## Team Name: 
 The Super Cool Coding People
 ## Short description: 
