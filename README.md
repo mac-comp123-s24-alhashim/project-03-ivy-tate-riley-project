@@ -1,7 +1,7 @@
 
 
 ## Connections
-Write information about your project here.
+
 
 ## Team Members: 
 - Tate Mack (tmack1@macalester.edu)
