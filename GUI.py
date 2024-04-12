@@ -36,6 +36,7 @@ class BasicGui:
         self.button15.grid(row=4, column=3)
         self.button16 = tk.Button(self.rootWin, text="4", height=5, width=10)
         self.button16.grid(row=4, column=4)
+
         self.label1 = tk.Label(self.rootWin, text="eon")
         self.label1.grid(row=1, column=1)
         self.label7 = tk.Label(self.rootWin, text="there")
@@ -44,6 +45,33 @@ class BasicGui:
         self.label9.grid(row=3, column=1)
         self.label12 = tk.Label(self.rootWin, text="tow")
         self.label12.grid(row=3, column=4)
+
+        self.label2 = tk.Label(self.rootWin, text="clean")
+        self.label2.grid(row=1, column=2)
+        self.label4 = tk.Label(self.rootWin, text="neat")
+        self.label4.grid(row=1, column=4)
+        self.label11 = tk.Label(self.rootWin, text="tidy")
+        self.label11.grid(row=3, column=3)
+        self.label13 = tk.Label(self.rootWin, text="trim")
+        self.label13.grid(row=4, column=1)
+
+        self.label3 = tk.Label(self.rootWin, text="ear")
+        self.label3.grid(row=1, column=3)
+        self.label5 = tk.Label(self.rootWin, text="kettle")
+        self.label5.grid(row=2, column=1)
+        self.label10 = tk.Label(self.rootWin, text="oil")
+        self.label10.grid(row=3, column=2)
+        self.label15 = tk.Label(self.rootWin, text="steel")
+        self.label15.grid(row=4, column=3)
+
+        self.label6 = tk.Label(self.rootWin, text="integer")
+        self.label6.grid(row=2, column=2)
+        self.label8 = tk.Label(self.rootWin, text="boolean")
+        self.label8.grid(row=2, column=4)
+        self.label14 = tk.Label(self.rootWin, text="float")
+        self.label14.grid(row=4, column=2)
+        self.label16 = tk.Label(self.rootWin, text="string")
+        self.label16.grid(row=4, column=4)
 
     def run(self):
         self.rootWin.mainloop()
