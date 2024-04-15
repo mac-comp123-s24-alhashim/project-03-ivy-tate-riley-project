@@ -73,6 +73,9 @@ class BasicGui:
         self.label16 = tk.Label(self.rootWin, text="string")
         self.label16.grid(row=4, column=4)
 
+        self.correct_label = tk.Label(self.rootWin, text="")
+        self.correct_label.grid(row=5, column=2)
+
     def run(self):
         self.rootWin.mainloop()
 
