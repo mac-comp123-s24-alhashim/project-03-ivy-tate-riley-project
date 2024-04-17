@@ -1,5 +1,10 @@
 import tkinter as tk
 
+word_dictionary = [{"eon" : "Number Anagrams", "there" : "Number Anagrams", "net" : "Number Anagrams", "tow" : "Number Anagrams"},
+                   {"clean" : "Orderly", "neat" : "Orderly", "tidy" : "Orderly", "trim" : "Orderly"},
+                   {"ear" : "Drum ____", "kettle" : "Drum ____", "oil" : "Drum ____", "steel" : "Drum ____"},
+                   {"integer" : "Python Object Types", "boolean" : "Python Object Types", "float" : "Python Object Types", "string" : "Python Object Types"}]
+
 
 
 def check_connection(button_click1, button_click2, button_click3, button_click4):
