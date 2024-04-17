@@ -2,9 +2,15 @@ import tkinter as tk
 import random
 
 word_list = [{"eon" : "Number Anagrams", "there" : "Number Anagrams", "net" : "Number Anagrams", "tow" : "Number Anagrams"},
-                   {"clean" : "Orderly", "neat" : "Orderly", "tidy" : "Orderly", "trim" : "Orderly"},
-                   {"ear" : "Drum ____", "kettle" : "Drum ____", "oil" : "Drum ____", "steel" : "Drum ____"},
-                   {"integer" : "Python Object Types", "boolean" : "Python Object Types", "float" : "Python Object Types", "string" : "Python Object Types"}]
+                    {"clean" : "Orderly", "neat" : "Orderly", "tidy" : "Orderly", "trim" : "Orderly"},
+                    {"ear" : "Drum ____", "kettle" : "Drum ____", "oil" : "Drum ____", "steel" : "Drum ____"},
+                    {"integer" : "Python Object Types", "boolean" : "Python Object Types", "float" : "Python Object Types", "string" : "Python Object Types"},
+                    {"silly" : "Humerous", "goofy" : "Humerous", "funny" : "Humerous", "hilarious" : "Humerous"},
+                    {"solid" : "Rock ____", "music" : "Rock ____", "bottom" : "Rock ____", "on": "Rock ____"},
+                    {"petal" : "Parts of a Flower", "stem" : "Parts of a Flower", "leaf" : "Parts of a Flower", "thorn" : "Parts of a Flower"},
+                    {"none" : "Words Containing Numbers", "tennis" : "Words Containing Numbers", ""}]
+
+## flip dictionary order {Category name : [word1, word2, word3, word4]}
 
 def random_groups(lst):
     groups = random.sample(lst, k=4)
