@@ -1,23 +1,33 @@
 import tkinter as tk
 import random
 
-word_list = [{"eon" : "Number Anagrams", "there" : "Number Anagrams", "net" : "Number Anagrams", "tow" : "Number Anagrams"},
-                    {"clean" : "Orderly", "neat" : "Orderly", "tidy" : "Orderly", "trim" : "Orderly"},
-                    {"ear" : "Drum ____", "kettle" : "Drum ____", "oil" : "Drum ____", "steel" : "Drum ____"},
-                    {"integer" : "Python Object Types", "boolean" : "Python Object Types", "float" : "Python Object Types", "string" : "Python Object Types"},
-                    {"silly" : "Humerous", "goofy" : "Humerous", "funny" : "Humerous", "hilarious" : "Humerous"},
-                    {"solid" : "Rock ____", "music" : "Rock ____", "bottom" : "Rock ____", "on": "Rock ____"},
-                    {"petal" : "Parts of a Flower", "stem" : "Parts of a Flower", "leaf" : "Parts of a Flower", "thorn" : "Parts of a Flower"},
-                    {"none" : "Words Containing Numbers", "tennis" : "Words Containing Numbers", ""}]
+word_list = {"Number Anagrams" : ["eon", "there", "net", "tow"],
+             "Orderly" : ["clean", "neat", "tidy", "trim"],
+             "Drum ____" : ["ear", "kettle", "oil", "steel"],
+             "Python Object Types" : ["integer", "boolean", "float", "string"],
+             "Humerous" : ["silly", "goofy", "funny", "hilarious"],
+             "Rock ____" : ["solid", "music", "bottom", "on"],
+             "Parts of a Flower" : ["petal", "stem", "leaf", "thorn"],
+             "Words Containing Numbers" : ["none", "tennis", "sixth", "weight"]}
 
-## flip dictionary order {Category name : [word1, word2, word3, word4]}
+def random_words(lst):
+    all_keys = list(lst.values())
+    four_keys = random.sample(all_keys, 4)
+    flat_list = []
+    for xs in four_keys:
+        for x in xs:
+            flat_list.append(x)
+    random_words = random.sample(flat_list, 16)
 
-def random_groups(lst):
-    groups = random.sample(lst, k=4)
-    return groups
+    return random_words
 
-def random_text(lst):
-    
+print(random_words(word_list))
+
+
+
+
+
+
 
 
 # def check_connection(button_click1, button_click2, button_click3, button_click4):
