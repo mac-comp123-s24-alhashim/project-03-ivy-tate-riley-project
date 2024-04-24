@@ -26,6 +26,12 @@ list_of_words = random_words(word_list)
 print(list_of_words)
 
 
+# def clear_function(self):
+#     button_texts.clear()
+#     list_of_categories.clear()
+
+
+
 
 
 def check_connection(self, button_click1, button_click2, button_click3, button_click4):
