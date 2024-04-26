@@ -33,7 +33,7 @@ class BasicGui:
     def check_connection(self):
         list_of_categories = []
         for x in self.button_texts:
-            category_name = word_list().index(x)
+            category_name = [k for k, v in word_list.items() if v == x]
             list_of_categories = list_of_categories + category_name
 
         print(list_of_categories)
