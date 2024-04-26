@@ -5,7 +5,7 @@ from NewGUI import *
 #change word_list name
 word_list = {"Number Anagrams" : {"eon", "there", "net", "tow"},
              "Orderly" : {"clean", "neat", "tidy", "trim"},
-             "Drum ____" : {"ear", "kettle", "oil", "steel"},
+             "____ Drum" : {"ear", "kettle", "oil", "steel"},
              "Python Object Types" : {"integer", "boolean", "float", "string"},
              "Humerous" : {"silly", "goofy", "funny", "hilarious"},
              "Rock ____" : {"solid", "music", "bottom", "on"},

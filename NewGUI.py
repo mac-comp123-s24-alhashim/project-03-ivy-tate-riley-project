@@ -17,7 +17,8 @@ class BasicGui:
                 word_index = word_index + 1
         self.correct_label = tk.Label(self.rootWin, text="", wraplength=275)
         self.correct_label.grid(row=5, column=1, columnspan=2)
-        self.clear_button = tk.Button(self.rootWin, text="clear", command="clear_function")
+        self.clear_button = tk.Button(self.rootWin, text="clear")
+        # self.clear_button["command"] = self.clear_function
         self.clear_button.grid(row=5, column=3)
 
     def button_is_clicked(self, word):
@@ -29,19 +30,25 @@ class BasicGui:
             self.check_connection()
 
     def check_connection(self):
+        found_match = False
         for k, v in word_list.items():
             differences = self.button_texts.difference(v)
             print(differences)
 
             if not differences:
+                found_match = True
                 for k, v in word_list.items():
                     if v == self.button_texts:
                         category_name = k
+                        print(category_name)
                         self.correct_label["text"] = str("Correct! The Connection Category is:") + "\n" + str(category_name)
                         self.button_texts.clear()
-            else:
-                self.correct_label["text"] = str("Incorrect Connection")
-                self.button_texts.clear()
+                    else:
+                        pass
+
+        if not found_match:
+            self.correct_label["text"] = str("Incorrect Connection")
+            self.button_texts.clear()
 
     #         list_of_colors = ["yellow", "green", "blue", "purple"]
     #         for x in button_texts:
@@ -49,14 +56,9 @@ class BasicGui:
     #             #button where x = text of button == self.button.configure(bg="green") - try to make different categories different colors
     #         button_texts.clear()
     #         list_of_categories.clear()
-    #     else:
-    #         self.correct_label[""] = str("Incorrect Connection")
-    #         button_texts.clear()
-    #         list_of_categories.clear()
     #
     # def clear_function(self):
-    #     button_texts.clear()
-    #     list_of_categories.clear()
+    #     self.button_texts.clear()
 
     def run(self):
         self.rootWin.mainloop()
