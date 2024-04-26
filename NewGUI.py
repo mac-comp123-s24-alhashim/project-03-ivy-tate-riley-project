@@ -8,7 +8,7 @@ class BasicGui:
         self.rootWin.title("Connections")
         self.rootWin.geometry("750x750")
         word_index = 0
-        self.button_texts = []
+        self.button_texts = set()
         for row in range(4):
             for column in range(4):
                 self.button = tk.Button(self.rootWin, text=list_of_words[word_index], height=5, width=10)
@@ -22,36 +22,43 @@ class BasicGui:
 
     def button_is_clicked(self, word):
         print(word)
-        self.button_texts.append(word)
+        self.button_texts.add(word)
 
         print(self.button_texts)
         if len(self.button_texts) == 4:
             self.check_connection()
 
-
-
     def check_connection(self):
-        list_of_categories = []
-        for x in self.button_texts:
-            category_name = [k for k, v in word_list.items() if v == x]
-            list_of_categories = list_of_categories + category_name
+        for k,v in word_list.items():
+            differences = self.button_texts.difference(v)
+            print(differences)
 
-        print(list_of_categories)
-        # if list_of_categories[0] == list_of_categories[1] == list_of_categories[2] == list_of_categories[3]:
-        #     self.correct_label[""] = str("Correct! The Connection Category is Number Anagrams")
-        #     list_of_colors = ["yellow", "green", "blue", "purple"]
-        #     for x in button_texts:
-        #
-        #         #button where x = text of button == self.button.configure(bg="green") - try to make different categories different colors
-        #     button_texts.clear()
-        #     list_of_categories.clear()
-        # else:
-        #     self.correct_label[""] = str("Incorrect Connection")
-        #     button_texts.clear()
-        #     list_of_categories.clear()
-
+        if set() in differences:
+            for k, v in word_list.items():
+                if v == self.button_texts:
+                    category_name = k
+            self.correct_label[""] = "Correct! The Connection Category is category_name"
+    #         list_of_colors = ["yellow", "green", "blue", "purple"]
+    #         for x in button_texts:
+    #
+    #             #button where x = text of button == self.button.configure(bg="green") - try to make different categories different colors
+    #         button_texts.clear()
+    #         list_of_categories.clear()
+    #     else:
+    #         self.correct_label[""] = str("Incorrect Connection")
+    #         button_texts.clear()
+    #         list_of_categories.clear()
+    #
+    # def clear_function(self):
+    #     button_texts.clear()
+    #     list_of_categories.clear()
 
     def run(self):
         self.rootWin.mainloop()
-        self.check_connection()
+
+if __name__ == '__main__':
+    list_of_words = random_words(word_list)
+    myGui = BasicGui(list_of_words)
+    myGui.run()
+
 

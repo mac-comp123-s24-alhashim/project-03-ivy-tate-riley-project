@@ -2,14 +2,16 @@ import tkinter as tk
 import random
 from NewGUI import *
 
-word_list = {"Number Anagrams" : ["eon", "there", "net", "tow"],
-             "Orderly" : ["clean", "neat", "tidy", "trim"],
-             "Drum ____" : ["ear", "kettle", "oil", "steel"],
-             "Python Object Types" : ["integer", "boolean", "float", "string"],
-             "Humerous" : ["silly", "goofy", "funny", "hilarious"],
-             "Rock ____" : ["solid", "music", "bottom", "on"],
-             "Parts of a Flower" : ["petal", "stem", "leaf", "thorn"],
-             "Words Containing Numbers" : ["none", "tennis", "sixth", "weight"]}
+#change word_list name
+word_list = {"Number Anagrams" : {"eon", "there", "net", "tow"},
+             "Orderly" : {"clean", "neat", "tidy", "trim"},
+             "Drum ____" : {"ear", "kettle", "oil", "steel"},
+             "Python Object Types" : {"integer", "boolean", "float", "string"},
+             "Humerous" : {"silly", "goofy", "funny", "hilarious"},
+             "Rock ____" : {"solid", "music", "bottom", "on"},
+             "Parts of a Flower" : {"petal", "stem", "leaf", "thorn"},
+             "Words Containing Numbers" : {"none", "tennis", "sixth", "weight"},
+             "____ Roll" : {"drum", "honor", "bread", "eye"}}
 
 def random_words(lst):
     all_keys = list(lst.values())
@@ -22,24 +24,17 @@ def random_words(lst):
 
     return random_words
 
-list_of_words = random_words(word_list)
-print(list_of_words)
-
-
-# def clear_function(self):
-#     button_texts.clear()
-#     list_of_categories.clear()
 
 
 
 
 
-def check_connection(self, button_click1, button_click2, button_click3, button_click4):
-    button_clicks = []
-    for x in range(4):
-        text = self.button.text()
-        button_clicks = button_clicks + text
-    return button_clicks
+# def check_connection(self, button_click1, button_click2, button_click3, button_click4):
+#     button_clicks = []
+#     for x in range(4):
+#         text = self.button.text()
+#         button_clicks = button_clicks + text
+#     return button_clicks
     # if button_click1 == button_click2:
     #     if button_click1 == button_click3:
     #         if button_click1 == button_click4:
@@ -90,6 +85,3 @@ def check_connection(self, button_click1, button_click2, button_click3, button_c
     #     self.correct_label[""] = str("Incorrect")
 
 
-
-myGui = BasicGui(list_of_words)
-myGui.run()
