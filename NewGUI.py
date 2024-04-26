@@ -12,11 +12,11 @@ class BasicGui:
         for row in range(4):
             for column in range(4):
                 self.button = tk.Button(self.rootWin, text=list_of_words[word_index], height=5, width=10)
-                self.button["command"] = lambda idx = (self.button["text"]): self.button_is_clicked(idx)
+                self.button["command"] = lambda idx=(self.button["text"]): self.button_is_clicked(idx)
                 self.button.grid(row=row, column=column)
                 word_index = word_index + 1
-        self.correct_label = tk.Label(self.rootWin, text="")
-        self.correct_label.grid(row=5, column=2)
+        self.correct_label = tk.Label(self.rootWin, text="", wraplength=275)
+        self.correct_label.grid(row=5, column=1, columnspan=2)
         self.clear_button = tk.Button(self.rootWin, text="clear", command="clear_function")
         self.clear_button.grid(row=5, column=3)
 
@@ -29,15 +29,20 @@ class BasicGui:
             self.check_connection()
 
     def check_connection(self):
-        for k,v in word_list.items():
+        for k, v in word_list.items():
             differences = self.button_texts.difference(v)
             print(differences)
 
-        if set() in differences:
-            for k, v in word_list.items():
-                if v == self.button_texts:
-                    category_name = k
-            self.correct_label[""] = "Correct! The Connection Category is category_name"
+            if not differences:
+                for k, v in word_list.items():
+                    if v == self.button_texts:
+                        category_name = k
+                        self.correct_label["text"] = str("Correct! The Connection Category is:") + "\n" + str(category_name)
+                        self.button_texts.clear()
+            else:
+                self.correct_label["text"] = str("Incorrect Connection")
+                self.button_texts.clear()
+
     #         list_of_colors = ["yellow", "green", "blue", "purple"]
     #         for x in button_texts:
     #
@@ -56,9 +61,8 @@ class BasicGui:
     def run(self):
         self.rootWin.mainloop()
 
+
 if __name__ == '__main__':
     list_of_words = random_words(word_list)
     myGui = BasicGui(list_of_words)
     myGui.run()
-
-
