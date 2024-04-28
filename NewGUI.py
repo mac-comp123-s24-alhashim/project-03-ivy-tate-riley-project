@@ -10,7 +10,7 @@ class BasicGui:
         word_index = 0
         self.button_texts = set()
         # TODO: CREATE A LIST THAT STORES YOUR BUTTONS
-        buttonList = [] # Append buttons here
+        self.buttonList = [] # Append buttons here
         for row in range(4):
             for column in range(4):
                 self.button = tk.Button(self.rootWin, text=list_of_words[word_index], height=5, width=10)
@@ -31,6 +31,10 @@ class BasicGui:
         if len(self.button_texts) == 4:
             self.check_connection()
 
+    # def button_click_list(self, row, column):
+    #     self.buttonList.append((row, column))
+    #     print(self.buttonList)
+
     def check_connection(self):
         found_match = False
         for k, v in word_list.items():
@@ -44,10 +48,11 @@ class BasicGui:
                         category_name = k
                         print(category_name)
                         # get colors to change of buttons - ask Amin
-                        # list_of_colors = ["yellow", "green", "blue", "purple"]
-                        # for x in list(self.button_texts):
-                        #     if self.button.cget("text") == x: # Loop through buttons instead of looking at one button only
-                        #         self.button.configure(highlightbackground="red")
+                        list_of_colors = ["yellow", "green", "blue", "purple"]
+                        for x in list(self.button_texts):
+                            for y in list_of_colors:
+                                if x == self.button.cget("text"): # Loop through buttons instead of looking at one button only
+                                    self.button.configure(fg=y)
                         self.correct_label["text"] = str("Correct! The Connection Category is:") + "\n" + str(category_name)
                         self.button_texts.clear()
                     else:
@@ -56,9 +61,9 @@ class BasicGui:
         if not found_match:
             self.correct_label["text"] = str("Incorrect Connection")
             self.button_texts.clear()
-
-                #button where x = text of button == self.button.configure(bg="green") - try to make different categories different colors
     #
+    #             #button where x = text of button == self.button.configure(bg="green") - try to make different categories different colors
+    # #
     def clear_function(self):
         self.button_texts.clear()
 
