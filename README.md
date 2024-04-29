@@ -34,3 +34,5 @@ What colors look like on non Mac computer:
 
 
 ## Demo Video
+Google Drive Link:
+https://drive.google.com/file/d/1JtOYTbt2omwLmofW6tM_QxbEaJNol4pn/view?usp=sharing
