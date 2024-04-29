@@ -43,7 +43,7 @@ class BasicGui:
             if len(differences) == 0:
                 found_match = True
                 for button in self.clickedButton:
-                    button.configure(highlightbackground=self.list_of_colors[self.number_of_groups])
+                    button.configure(highlightbackground=self.list_of_colors[self.number_of_groups], bg=self.list_of_colors[self.number_of_groups])
                 self.number_of_groups += 1
                 print(self.number_of_groups)
                 self.clickedButton.clear()
