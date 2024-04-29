@@ -22,6 +22,8 @@ This connections game based off the New York Times connection game
 3. https://www.nytimes.com/games/connections
 
 ## Screenshots
+<img width="748" alt="Screenshot 2024-04-29 at 2 08 48 PM" src="https://github.com/mac-comp123-s24-alhashim/project-03-ivy-tate-riley-project/assets/156858237/dc5e6659-d085-4685-a5a5-9598d936cca6">
+<img width="751" alt="Screenshot 2024-04-29 at 2 08 20 PM" src="https://github.com/mac-comp123-s24-alhashim/project-03-ivy-tate-riley-project/assets/156858237/b2c5c3f6-eeba-4e49-8385-a9aec9f8ae2d">
 
 
 ## Demo Video
