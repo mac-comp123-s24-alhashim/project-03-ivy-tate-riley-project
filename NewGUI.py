@@ -10,7 +10,7 @@ class BasicGui:
         word_index = 0
         self.button_texts = set()
         self.clickedButton = []
-        self.list_of_colors = ["yellow", "green", "blue", "purple"]
+        self.list_of_colors = ["yellow", "light green", "light blue", "magenta"]
         self.number_of_groups = 0
         for row in range(4):
             for column in range(4):
