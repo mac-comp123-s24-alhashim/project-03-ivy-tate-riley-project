@@ -9,12 +9,13 @@ class BasicGui:
         self.rootWin.geometry("750x750")
         word_index = 0
         self.button_texts = set()
-        # TODO: CREATE A LIST THAT STORES YOUR BUTTONS
-        self.buttonList = [] # Append buttons here
+        self.clickedButton = []
+        self.list_of_colors = ["yellow", "green", "blue", "purple"]
+        self.number_of_groups = 0
         for row in range(4):
             for column in range(4):
                 self.button = tk.Button(self.rootWin, text=list_of_words[word_index], height=5, width=10)
-                self.button["command"] = lambda idx=(self.button["text"]): self.button_is_clicked(idx)
+                self.button["command"] = lambda idx=self.button: self.button_is_clicked(idx)
                 self.button.grid(row=row, column=column)
                 word_index = word_index + 1
         self.correct_label = tk.Label(self.rootWin, text="", wraplength=275)
@@ -23,49 +24,47 @@ class BasicGui:
         self.clear_button["command"] = self.clear_function
         self.clear_button.grid(row=5, column=3)
 
-    def button_is_clicked(self, word):
-        print(word)
-        self.button_texts.add(word)
+    def button_is_clicked(self, button):
+        print(button)
+        self.button_texts.add(button["text"])
+        self.clickedButton.append(button)
 
         print(self.button_texts)
         if len(self.button_texts) == 4:
             self.check_connection()
-
-    # def button_click_list(self, row, column):
-    #     self.buttonList.append((row, column))
-    #     print(self.buttonList)
 
     def check_connection(self):
         found_match = False
         for k, v in word_list.items():
             differences = self.button_texts.difference(v)
             print(differences)
+            print(len(differences))
 
-            if not differences:
+            if len(differences) == 0:
                 found_match = True
+                for button in self.clickedButton:
+                    button.configure(highlightbackground=self.list_of_colors[self.number_of_groups])
+                self.number_of_groups += 1
+                print(self.number_of_groups)
+                self.clickedButton.clear()
                 for k, v in word_list.items():
                     if v == self.button_texts:
                         category_name = k
                         print(category_name)
-                        # get colors to change of buttons - ask Amin
-                        list_of_colors = ["yellow", "green", "blue", "purple"]
-                        for x in list(self.button_texts):
-                            for y in list_of_colors:
-                                if x == self.button.cget("text"): # Loop through buttons instead of looking at one button only
-                                    self.button.configure(fg=y)
                         self.correct_label["text"] = str("Correct! The Connection Category is:") + "\n" + str(category_name)
                         self.button_texts.clear()
                     else:
                         pass
+                return
 
         if not found_match:
             self.correct_label["text"] = str("Incorrect Connection")
             self.button_texts.clear()
-    #
-    #             #button where x = text of button == self.button.configure(bg="green") - try to make different categories different colors
-    # #
+            self.clickedButton.clear()
+
     def clear_function(self):
         self.button_texts.clear()
+        self.clickedButton.clear()
 
     def run(self):
         self.rootWin.mainloop()
